@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+    </label>
+  <em>Enable Dark Mode!</em>
+</div>
+    <h1>Dangerous Game</h1>
+        <p>Once upon a time, i just saw you. I have beautiful memory about us. Of course that's just in my dream.</p>
+        <p>Little did you know i was dying to the very end. You killed me with every smiles you gave. My heart melted and my knees shook. I always want more than that.</p>
+        <p>But i guess it wasn't meant to be. But you'll never truly know how much you meant to me. You're always there, and wiped away every tears.</p>
+        <p>I'm just your nothing. I know he's your everything. When i saw you looking at his eyes, i realized of who i am. The tiny drops of rain, symbolizez my tears and pain. Losing you is my biggest fear. Now everything is clear.</p>
+        <p>I have been a rebel all my life. Fighting against established formality. Dreaming about adventures and another shit. Making plans inside my own mind. Trying to break free to be myself. Looking far that magic knife. To cut the bridge that holds me.</p>
+        <p>Loving you was never wrong. Indeed it made me strong. I was once a <a href="https://www.vocabulary.com/dictionary/rebel">rebel</a>. But you turned me to an angel. Or at least that's what i think.</p>
+        <p>I just wish you would've waited, stay there. I still dream about you in this one-sided love. It's hard to breathe without you. I wish you loved me the way i loved you.</p>
+        <p>But i realize that this is a lesson to me. To understand the truth. This one-sided love feels like a dangerous game. But again, thats the name of the game.</p>
+    <script>
+                window.console = window.console || function(t) {};
+        if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+        }
+        console.log('Ka.');
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark'); //add this
+            }
+            else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }    
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
+
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+    </script>
+</body>
+</html>
